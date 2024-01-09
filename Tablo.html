@@ -3,12 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Çarpma İşlemi</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212; /* Koyu gri arka plan */
+            background-color: #121212;
             color: #fff;
             margin: 0;
             display: flex;
@@ -18,7 +17,7 @@
         }
 
         .anadiv {
-            background-color: #333; /* Koyu gri konteyner arka plan */
+            background-color: #333; 
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -27,14 +26,14 @@
         }
 
         h1 {
-            color: #00a8e8; /* Mavi başlık renk */
+            color: #00a8e8; 
             margin-bottom: 20px;
         }
 
         label {
             display: block;
             margin-bottom: 15px;
-            color: #fff; /* Beyaz etiket renk */
+            color: #fff; 
         }
 
         input {
@@ -42,15 +41,15 @@
             padding: 15px;
             margin-bottom: 20px;
             box-sizing: border-box;
-            border: 1px solid #555; /* Koyu gri kenarlık */
+            border: 1px solid #555; 
             border-radius: 8px;
-            background-color: #444; /* Koyu gri arka plan */
+            background-color: #444;
             color: #fff;
             display: inline-block;
         }
 
         button {
-            background-color: #00a8e8; /* Mavi düğme rengi */
+            background-color: #00a8e8; 
             color: #fff;
             padding: 15px 25px;
             border: none;
@@ -61,7 +60,7 @@
         }
 
         button:hover {
-            background-color: #0074a8; /* Koyu mavi hover rengi */
+            background-color: #0074a8; 
         }
 
         #result {
@@ -102,7 +101,7 @@
         }
 
         .blue {
-            background-color: #00a8e8; /* Mavi hücre rengi */
+            background-color: #00a8e8;
         }
     </style>
 </head>
@@ -114,10 +113,10 @@
             <div id="sayilarsonucdiv">
                 <form name="sayilarform">
                     <label for="num1">1. Sayı :</label>
-                    <input type="text" id="num1" placeholder="Birinci sayıyı girin" required><br>
+                    <input type="text" id="num1" placeholder="Birinci sayıyı girin"><br>
                     <label for="num2">2. Sayı :</label>
-                    <input type="text" id="num2" placeholder="İkinci sayıyı girin" required><br>
-                    <button type="button" onclick="çarpma()">ÇARP</button>
+                    <input type="text" id="num2" placeholder="İkinci sayıyı girin" ><br>
+                    <button type="button" onclick="carpma()">ÇARP</button>
                 </form>
                 <div id="result"></div>
             </div>
@@ -126,7 +125,7 @@
     </div>
 
     <script>
-        function çarpma() {
+        function carpma() {
             var num1 = Number(document.getElementById("num1").value);
             var num2 = Number(document.getElementById("num2").value);
             var result = num1 * num2;
@@ -148,9 +147,9 @@
             }
         }
 
-        // Sayfa yüklendiğinde otomatik olarak çarpım tablosunu göster
+      
         window.onload = function () {
-            çarpma();
+            carpma();
         };
     </script>
 </body>
