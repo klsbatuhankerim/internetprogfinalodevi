@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çarpma İşlemi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Koyu gri arka plan */
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .anadiv {
+            background-color: #333; /* Koyu gri konteyner arka plan */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 800px;
+        }
+
+        h1 {
+            color: #00a8e8; /* Mavi başlık renk */
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            color: #fff; /* Beyaz etiket renk */
+        }
+
+        input {
+            width: calc(50% - 10px);
+            padding: 15px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #555; /* Koyu gri kenarlık */
+            border-radius: 8px;
+            background-color: #444; /* Koyu gri arka plan */
+            color: #fff;
+            display: inline-block;
+        }
+
+        button {
+            background-color: #00a8e8; /* Mavi düğme rengi */
+            color: #fff;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #0074a8; /* Koyu mavi hover rengi */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        #tablosayilardiv {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #sayilarsonucdiv {
+            width: 48%;
+            display: inline-block;
+        }
+
+        #Tablediv {
+            width: 48%;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        
+        td {
+            border: 1px solid #555;
+            padding: 8px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .blue {
+            background-color: #00a8e8; /* Mavi hücre rengi */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="anadiv">
+        <h1>Çarpma İşlemi</h1>
+        <div id="tablosayilardiv">
+            <div id="sayilarsonucdiv">
+                <form name="sayilarform">
+                    <label for="num1">1. Sayı :</label>
+                    <input type="text" id="num1" placeholder="Birinci sayıyı girin" required><br>
+                    <label for="num2">2. Sayı :</label>
+                    <input type="text" id="num2" placeholder="İkinci sayıyı girin" required><br>
+                    <button type="button" onclick="çarpma()">ÇARP</button>
+                </form>
+                <div id="result"></div>
+            </div>
+            <table id="Tablediv"></table>
+        </div>
+    </div>
+
+    <script>
+        function çarpma() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var result = num1 * num2;
+
+            document.getElementById("result").innerHTML = "Sonuç : " + result;
+
+            var table = document.getElementById("Tablediv");
+            table.innerHTML = "";
+
+            for (var i = 1; i <= 10; i++) {
+                var row = table.insertRow();
+                for (var j = 1; j <= 10; j++) {
+                    var cell = row.insertCell();
+                    cell.innerHTML = i * j;
+                    if (result == i * j) {
+                        cell.classList.add("blue");
+                    }
+                }
+            }
+        }
+
+        // Sayfa yüklendiğinde otomatik olarak çarpım tablosunu göster
+        window.onload = function () {
+            çarpma();
+        };
+    </script>
+</body>
+
+</html>

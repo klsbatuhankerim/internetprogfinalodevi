@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Giriş Sayfası</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #292b2c;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .a {
+            background-color: #343a40;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        .k {
+            display: inline-block;
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #333; 
+            color: #fff;
+        }
+
+        button {
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #46b8da;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <h2>Giriş Sayfası</h2>
+        <span class="k">&#128100;</span>
+        <label for="username"><b>Kullanıcı Adı</b></label>
+        <input type="text" placeholder="Kullanıcı adınızı girin" name="username" id="username" required>
+
+        <label for="password"><b>Şifre</b></label>
+        <input type="password" placeholder="Şifrenizi girin" name="password" id="password" required>
+
+        <button type="button" onclick="validate()">Giriş Yap</button>
+    </div>
+
+    <script>
+        function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "batuhan" && password == "3737") {
+                alert("Giriş başarılı!");	
+                window.location = "file:///C:/Users/Batuhan%20Kerim/OneDrive/Masa%C3%BCst%C3%BC/intprog/Tablo.html"; 
+               
+            } else {
+                alert("Kullanıcı adı veya şifre yanlış!");
+            }
+        }
+    </script>
+</body>
+
+</html>
